@@ -12,10 +12,13 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://lead-management-table.vercel.app/"
+    "https://lead-management-table.vercel.app"
   ],
   credentials: true
 }));
+
+app.options("*", cors());
+
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
