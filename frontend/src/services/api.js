@@ -5,4 +5,6 @@ const API = axios.create({
   withCredentials: true // important for cookie-based auth
 });
 
+console.log("API BASE URL:", import.meta.env.VITE_API_URL)
+
 export default API;
