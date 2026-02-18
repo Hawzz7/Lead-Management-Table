@@ -89,3 +89,26 @@ Table: `leads`
 
 ## 🏗️ Project Architecture
 
+### 🔷 System Overview
+
+```
+User (Public Lead Form)
+        │
+        ▼
+Frontend (React + Vite + Tailwind) — Deployed on Vercel
+        │
+        │  HTTPS API Calls
+        ▼
+Backend (Node.js + Express) — Deployed on Render
+        │
+        ├───────────────┬────────────────┐
+        ▼               ▼                ▼
+PostgreSQL         Google Sheets     JWT Authentication
+(Supabase)         API Sync          (Admin Only)
+        │
+        ▼
+Google Apps Script Automation (Daily 9 AM Trigger)
+        │
+        ▼
+Reminder Email → Lead (CC Admin)
+
