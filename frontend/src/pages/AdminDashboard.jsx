@@ -44,7 +44,7 @@ function AdminDashboard() {
   const logout = async () => {
     await API.post("/admin/logout");
     toast.success("Logged out successfully");
-    navigate("/admin");
+     window.location.replace("/admin");
   };
 
   useEffect(() => {
