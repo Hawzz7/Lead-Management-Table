@@ -12,7 +12,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://lead-management-table.onrender.com"
+    "https://lead-management-table.vercel.app/"
   ],
   credentials: true
 }));
